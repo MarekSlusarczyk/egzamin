@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>malarz</title>
+        <link rel="stylesheet" href="./styl_1.css">
+    </head>
+    <body>
+        <header>
+            <h1>Malowanie pokoi i biur</h1>
+        </header>
+        <main>
+            <div class="blokLewy">
+                <h2>Menu</h2>
+                <ul>
+                    <li><a href="./mieszamy.html">Mieszamy</a></li>
+                    <li><a href="./cena.html">Wyceniamy</a></li>
+                </ul>
+            </div>
+            <div class="blokSrodkowy">
+                <h2>Zapotrzebowanie na farbę</h2>
+                <div>Powierzchnia malowania (m<sup>2</sup>): <input type="number"> <button>Oblicz</button></div>
+                <div class="wynik"></div>
+            </div>
+            <div class="blokPrawy">
+                <img src="./obraz.png" alt="Próbki farb">
+            </div>
+        </main>
+        <footer>
+            <h3>MALARZ</h3>
+            <p>Stronę opracował: 000000000000</p>
+        </footer>
+
+        <script>
+            const input = document.querySelector('input[type="number"]');
+            const btn = document.querySelector('button');
+            const divWynik = document.querySelector('.wynik')
+
+            btn.addEventListener('click', function() {
+                const inputVal = input.value;
+                const litrFarbyNaPowierzchnie = 4;
+                let iloscPuszek = Math.ceil(inputVal / litrFarbyNaPowierzchnie);
+                divWynik.innerHTML = `Liczba potrzebnych puszek: ${iloscPuszek}`; 
+            })
+        </script>
+    </body>
+</html>
